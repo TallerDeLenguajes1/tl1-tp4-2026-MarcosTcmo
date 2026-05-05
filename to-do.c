@@ -3,7 +3,7 @@
 #include <time.h>
 #include <string.h>
 
-void liberarBuffer()
+void limpiarBuffer()
 {
     int c;
     while ((c = getchar()) != '\n' && c != EOF)
@@ -47,18 +47,18 @@ int main()
             }
 
             scanf("%d", &duracion);
-            liberarBuffer();
+            limpiarBuffer();
         } while (duracion < 10 || duracion > 100);
         Nodo *nuevoNodo = CrearNodo(idIncremental, ingresoDescripcion, duracion);
         insertarNodo(&Start, nuevoNodo);
         puts("Desea ingresar otro nodo o finalizar la carga?: (s/n)");
         scanf(" %c", &confirmacion);
-        liberarBuffer();
+        limpiarBuffer();
         if (confirmacion == 'n' || confirmacion == 'N')
         {
             decision = 0;
         }
-    }
+    } 
     getchar();
     return 0;
 }
